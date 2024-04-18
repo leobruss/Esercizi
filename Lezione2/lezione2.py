@@ -382,13 +382,36 @@ print("\n")
 #and one fact about that city. The keys for each city’s dictionary should be something like country, population, and fact. 
 #Print the name of each city and all of the information you have stored about it.
 cities: dict = {
-    "Rome" : {"Country" : {"Italy" : {"Population" : "58,94 Milion"}}},
-    "Shanghai" : {"Country" : {"Cina" : {"Population" : "1,412 Billion"}}},
-    "Paris" : {"Country" : {"France" : {"Population" : "67,97 Milion"}}}
+    "City" : "Rome",
+    "Country" : "Italy", 
+    "Population" : "2,873 milion"
 }
-for city, country, populatin in cities.items() :
+country: dict = {
+    "City" : "Shanghai", 
+    "Country" : "Cina", 
+    "Population" : "26,32 milion"
+}
+population: dict = {
+    "City" : "Paris",
+    "Country" : "France", 
+    "Population" : "2,161 milion"
+}
+
+information: list = [cities, country, population]
+
+for city in information:
     print()
-    print(f"City : {city}")
+    print(f"City : {city['City']}")
+    print(f"Country : {city['Country']}")
+    print(f"Population : {city['Population']}")
+
+    print()
+
+
+#6-12. Extensions: We’re now working with examples that are complex enough that they can be extended in any number of ways. 
+#Use one of the example programs from this chapter, and extend it by adding new keys and values, changing the context of the program, 
+#or improving the formatting of the output.
+    
 
     
     
