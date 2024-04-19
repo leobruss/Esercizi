@@ -1,5 +1,9 @@
 #Leonardo Bruassani 
 #17/04/2024
+
+import random
+
+
 print("Hello Wolrd")
 print("\n")
 
@@ -381,36 +385,45 @@ print("\n")
 #Create a dictionary of information about each city and include the country that the city is in, its approximate population, 
 #and one fact about that city. The keys for each city’s dictionary should be something like country, population, and fact. 
 #Print the name of each city and all of the information you have stored about it.
-cities: dict = {
+Rome: dict = {
     "City" : "Rome",
     "Country" : "Italy", 
     "Population" : "2,873 milion"
 }
-country: dict = {
+Shanghai: dict = {
     "City" : "Shanghai", 
     "Country" : "Cina", 
     "Population" : "26,32 milion"
 }
-population: dict = {
+Paris: dict = {
     "City" : "Paris",
     "Country" : "France", 
     "Population" : "2,161 milion"
 }
 
-information: list = [cities, country, population]
-
-for city in information:
-    print()
-    print(f"City : {city['City']}")
-    print(f"Country : {city['Country']}")
-    print(f"Population : {city['Population']}")
-
-    print()
+cities: dict = {"Rome" : Rome, "Shanghai" : Shanghai, "Paris" : Paris}
+for city in cities:
+    print(city)
+    for k in cities[city]:
+     message = f"{k}:  {cities[city][k]}"
+     print(message)
+    
+print()
 
 
 #6-12. Extensions: We’re now working with examples that are complex enough that they can be extended in any number of ways. 
 #Use one of the example programs from this chapter, and extend it by adding new keys and values, changing the context of the program, 
 #or improving the formatting of the output.
+random_number = random.randint(0, 10)
+number = int(input("inserisci un numero da 1 a 10 :"))
+
+while number != random_number:
+    print("You Lose")
+    number = int(input("inserisci un numero da 1 a 10 :"))
+
+print("You win")
+    
+
     
 
     
