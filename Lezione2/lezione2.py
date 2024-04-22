@@ -419,7 +419,7 @@ number = int(input("inserisci un numero da 1 a 10 :"))
 
 while number != random_number:
     print("You Lose")
-    number = int(input("inserisci un numero da 1 a 10 :"))
+    number = int(input("inserisci un numero da 1 a  :"))
 
 print("You win")
     
