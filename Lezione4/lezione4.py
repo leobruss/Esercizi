@@ -216,20 +216,44 @@ print("\n")
 
 #8-15. Printing Models: Put the functions for the example printing_models.py in a separate file called printing_functions.py. 
 #Write an import statement at the top of printing_models.py, and modify the file to use the imported functions.
-import pandas
-dataframe = pandas.read_csv("filename")
+#import pandas
+#dataframe = pandas.read_csv("filename")
+#print("\n")
+
 
 
 #8-16. Imports: Using a program you wrote that has one function in it, store that function in a separate file. Import the function into your main program file, 
 #and call the function using each of these approaches:
-import pandas
-from  pandas import read_csv
-from pandas import DataFrame as df
-import pandas as pd
-from pandas import *
+#import pandas
+#from  pandas import read_csv
+#from pandas import DataFrame as df
+#import pandas as pd
+#from pandas import *
+#print("\n")
 
 
 
 #8-17. Styling Functions: Choose any three programs you wrote for this chapter, and make sure they follow the styling guidelines described in this section.
 
 #Done
+
+#Questa funzione serve per implementare Bubble sort
+import time
+
+def bubble_sort(a: list) -> list:
+      for i in range(len(a)):
+            swap_flag = False
+            for j in range(len(a)-i-1):
+                  if (a[j] > a[j+1]):
+                        swap_flag = True
+                        temp: int = a[j]
+                        a[j] = a[j+1]
+                        a[j+1] = temp
+            if swap_flag is False:
+                  return a    
+      
+a: list = [2, 3, 30, 26, 45, 75]
+start: int = time.time()
+bubble_sort(a)
+print(time.time()- start)
+print(a)
