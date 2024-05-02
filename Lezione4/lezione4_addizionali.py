@@ -95,8 +95,8 @@ def carrello(taxes= 11):
                     print(f"\tDiscount: {discount}%")
                     print(f"\tDiscounted price: {price-discount_price}€")
                     print(f"\tTaxes: {taxes_price}€")
-                    print(f"\tPrice after taxes: {taxes_price+price-discount_price}€")
-                    print(f"\tPrice x Quntity: {(taxes_price+price-discount_price)*i[2]}€\n")                     
+                    print(f"\tPrice after taxes: {taxes_price+price-discount_price:.2f}€")
+                    print(f"\tPrice x Quntity: {(taxes_price+price-discount_price)*i[2]:.2f}€\n")                     
        elif  change == "exit":
              for i in cart:
                     price = i[1]
@@ -109,8 +109,8 @@ def carrello(taxes= 11):
                     print(f"\tDiscount: {discount}%")
                     print(f"\tDiscounted price: {price-discount_price}€")
                     print(f"\tTaxes: {taxes_price}€")
-                    print(f"\tPrice after taxes: {taxes_price+price-discount_price}€")
-                    print(f"\tPrice x Quntity: {(taxes_price+price-discount_price)*i[2]}€\n") 
+                    print(f"\tPrice after taxes: {taxes_price+price-discount_price:.2f}€")
+                    print(f"\tPrice x Quntity: {(taxes_price+price-discount_price)*i[2]:.2f}€\n") 
                     
              return carrello
 
