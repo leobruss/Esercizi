@@ -19,6 +19,9 @@ scores: list = [[77, 89, 96], [30, 69, 72], [78, 90, 63]]
 for student, score in zip(students, scores):
     student_score(student_name=student, score=score)
 
+print("\n")
+
+
 
 #2. Guess the Number Game:
 
@@ -26,6 +29,31 @@ for student, score in zip(students, scores):
 #Prompt the user to guess the number within a specified maximum number of attempts.
 #Provide feedback to the user after each guess, indicating whether their guess is too high, too low, or correct.
 #Terminate the loop when the user guesses the number correctly or reaches the maximum number of attempts.
+import random
+def guess_number(min_range, max_range, max_attempts):   
+    random_number = random.randint(min_range, max_range)
+    for attempt in range(max_attempts, 0, -1):
+        number = int(input(f"Guess the number ranging from {min_range} to {max_range}, remember you only have {max_attempts} attempt :"))
+        if number == random_number:
+            print(f"Congratulations! You guessed the number {random_number}")
+            return
+        elif number > random_number:
+            print("The number you are looking for is smaller\n")
+        elif number < random_number:
+            print("The number you are looking for is larger\n")
+
+        print(f"Try again. (Attempts left: {attempt - 1})\n")
+
+    print(f"\tSorry, you have used all {max_attempts} attempts. The correct number was {random_number}.")
+
+
+min_range = 1
+max_range = 100
+max_attempts = 5
+guess_number(min_range, max_range, max_attempts)
+
+print("\n")
+
 
 
 #3. E-commerce Shopping Cart:
@@ -35,6 +63,60 @@ for student, score in zip(students, scores):
 #   The function should calculate the cart total and apply any discounts or taxes.
 #     Implement a for loop to iterate over the items in the cart and print detailed information about each product and the total.
 
+def product(name: str, price: float, quantity: int, discount: int):
+    return name, price, quantity, discount
+   
+
+def carrello(taxes= 11):
+    cart = []
+    
+    while True:
+       change = input("Do you want to add, remove, view or exit?")
+
+       if change == "add":
+           prodotto = product(name= input("\nEnter the name of your product: "), price=float(input("Enter the price of your product: ")), quantity=int(input("Enter the quantity of your product: ")), discount= int(input("Enter the discount of the product: ")))
+           cart.append(prodotto) 
+       elif change == "remove":
+           remove = input("Enter name for remove: ")
+           for prodotto in cart:
+                if prodotto[0] == remove:
+                        cart.remove(prodotto)
+       elif change == "view":
+           view = input("Enter name for view: ")
+           for i in cart: 
+                if i[0] == view:
+                    price = i[1]
+                    discount = int(i[3])
+                    discount_price = price*discount/100
+                    taxes_price = (taxes*(price-discount_price))/100
+                    print(f"\n\tName: {i[0]}")
+                    print(f"\tPrice: {i[1]}€")
+                    print(f"\tQuantity: {i[2]}")
+                    print(f"\tDiscount: {discount}%")
+                    print(f"\tDiscounted price: {price-discount_price}€")
+                    print(f"\tTaxes: {taxes_price}€")
+                    print(f"\tPrice after taxes: {taxes_price+price-discount_price}€")
+                    print(f"\tPrice x Quntity: {(taxes_price+price-discount_price)*i[2]}€\n")                     
+       elif  change == "exit":
+             for i in cart:
+                    price = i[1]
+                    discount = int(i[3])
+                    discount_price = price*discount/100
+                    taxes_price = (taxes*(price-discount_price))/100
+                    print(f"\n\tName: {i[0]}")
+                    print(f"\tPrice: {i[1]}€")
+                    print(f"\tQuantity: {i[2]}")
+                    print(f"\tDiscount: {discount}%")
+                    print(f"\tDiscounted price: {price-discount_price}€")
+                    print(f"\tTaxes: {taxes_price}€")
+                    print(f"\tPrice after taxes: {taxes_price+price-discount_price}€")
+                    print(f"\tPrice x Quntity: {(taxes_price+price-discount_price)*i[2]}€\n") 
+                    
+             return carrello
+
+       
+           
+carrello()
 #4. Text Analysis:
 
 #     Create a function that reads a text file and counts the number of occurrences of each word.
@@ -72,7 +154,7 @@ for student, score in zip(students, scores):
 
 
 #9. Caesar Cipher Encryption/Decryption
-
+i
 #    Create functions for encrypting and decrypting a message using the Caesar cipher.
 #    Allow the user to specify the shift value (number of positions to shift each letter).
 #    Handle both encryption and decryption using the same function with appropriate adjustments.
