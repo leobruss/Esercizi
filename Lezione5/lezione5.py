@@ -21,19 +21,19 @@ def add_like(playlists_dict, playlist_name, liked=True):
             break
     return playlists_dict
 
-# Example usage:
 
-# Creating playlists
+
+
 playlist1 = create_playlist("QVC10", "Ballon d'or", "Jeffrey", "La ballata del dubbio pt4")
 playlist2 = create_playlist("Habitat", "Se ne va", "No more drama")
 playlist3 = create_playlist("Eclissi", "Silenzio", "Qua cont te", "Adesso")
 
 playlists = [playlist1, playlist2, playlist3]
 
-# Adding likes to playlists
+
 playlists = add_like(playlists, "QVC10  ", liked=False)
 
-# Printing updated playlists
+
 for playlist in playlists:
     print("Playlist:", playlist["name"])
     print("Songs:", playlist["songs"])
