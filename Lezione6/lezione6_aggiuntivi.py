@@ -21,6 +21,7 @@ animal1.print_info()
 animal2.print_info()
 print("\n")
 
+from typing import List
 
 class Food:
     def __init__(self, name: str, price: str, description: str) -> None:
@@ -31,9 +32,9 @@ class Food:
 class Menu:
     def __init__(self, foods=None):
         if foods is None:
-            self.foods = []
+            self.foods: List[Food] = []
         else:
-            self.foods = foods
+            self.foods: List[Food] = foods
     
     def addFood(self, food):
         self.foods.append(food)
