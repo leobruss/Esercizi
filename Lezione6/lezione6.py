@@ -152,6 +152,10 @@ class Person:
                                      "Trento":"L378","Trieste":"L424","Venezia":"L736"}  
         birth_place= cadastral_codes[birth_place]    
 
+        codice_fiscale_parziale = consonanti_accettate_cognome + consonanti_accettate_nome + self.birth_date[-2:] + month_letter + birth_day + birth_place
+
+        codice_fiscale = ""
+       
         even_nums: dict = {
             " ": " ",
             "A": 0,
@@ -261,19 +265,29 @@ class Person:
             25: "Z"
         }
 
-        codice_di_controllo = ""
-        for i in consonanti_accettate_cognome
-                odd_nums[consonanti_accettate_cognome]
-        return consonanti_accettate_cognome + consonanti_accettate_nome + self.birth_date[-2:] + month_letter + birth_day + birth_place
+        sum_odd = 0
+        for i in range(0,15,2):
+            sum_odd += odd_nums[codice_fiscale_parziale[i]]
+
+        sum_even = 0
+        for i in range(1,15,2):
+            sum_even += even_nums[codice_fiscale_parziale[i]]
+
+        rest = (sum_odd + sum_even) % 26
+        
+        if rest in control_digits:
+            codice_fiscale_parziale += str(control_digits[rest])
+            codice_fiscale = codice_fiscale_parziale
+        return codice_fiscale
+        
+                
        
 person_1 : Person = Person(name="Leonardo", surname="Brussani", birth_date="24/07/2004", birth_place="Roma", gender="M")
 
 
-"""queue: list[Person] = [person_1, person_2]
-for person in queue:
-    print(person.get__ssn())"""
-
-print(person_1.get__name())
-print(person_1.get__surname())
-print(person_1.get__ssn())
-#print(person_1.__name, person_1.__surname, person_1.__ssn)
+print("Name: ", person_1.get__name())
+print("Surname: ", person_1.get__surname())
+print("Date of birth: ", person_1.birth_date)
+print("Place of birth: ", person_1.birth_place)
+print("Your gender: ", person_1.gender)
+print(person_1.get__name(), person_1.get__surname(), "your ssn is: ", person_1.get__ssn())

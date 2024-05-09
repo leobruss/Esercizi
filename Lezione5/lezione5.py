@@ -7,7 +7,7 @@
 #Write a function called add_like() that accepts a dictionary, the name of a playlist, and a boolean value indicating whether it is liked (True or False). 
 #This function should return an updated dictionary
 #Example: add_like(dictionary, “Road Trip”, liked=True)
-def create_playlist(playlist_name, *songs):
+def create_playlist(playlist_name, *songs) ->dict:
     playlist = {
         "name": playlist_name,
         "songs": set(songs)
@@ -21,19 +21,19 @@ def add_like(playlists_dict, playlist_name, liked=True):
             break
     return playlists_dict
 
+# Example usage:
 
-
-
+# Creating playlists
 playlist1 = create_playlist("QVC10", "Ballon d'or", "Jeffrey", "La ballata del dubbio pt4")
 playlist2 = create_playlist("Habitat", "Se ne va", "No more drama")
 playlist3 = create_playlist("Eclissi", "Silenzio", "Qua cont te", "Adesso")
 
 playlists = [playlist1, playlist2, playlist3]
 
-
+# Adding likes to playlists
 playlists = add_like(playlists, "QVC10  ", liked=False)
 
-
+# Printing updated playlists
 for playlist in playlists:
     print("Playlist:", playlist["name"])
     print("Songs:", playlist["songs"])
@@ -45,14 +45,21 @@ for playlist in playlists:
 
 
 #2. Book Collection:
-
-#Write a function called add_book() that accepts an author's name and a variable number of book titles authored by them. This function should return a dictionary where the author's name is the key and the value is a list of their books. Demonstrate this function by adding books for different authors.
-
+#Write a function called add_book() that accepts an author's name and a variable number of book titles authored by them. This function should return a dictionary 
+#where the author's name is the key and the value is a list of their books. Demonstrate this function by adding books for different authors.
 #Example: add_book("Mark Twain", ["The Adventures of Tom Sawyer", "Life on the Mississippi"])
-
-#Write a function called delete_book() that accepts a dictionary and the name of the author from whom to remove all details. This function should return an updated dictionary.
-
+#Write a function called delete_book() that accepts a dictionary and the name of the author from whom to remove all details. 
+#This function should return an updated dictionary.
 #Example: delete_book(dictionary, “Mark Twain”)
+def add_book(name, *titles) ->dict:
+    info = {
+        "Name" : name,
+        "Titles" : set(titles)
+    }
+    return info
+
+def delete_book(info_dict, name):
+    
 
 
 
