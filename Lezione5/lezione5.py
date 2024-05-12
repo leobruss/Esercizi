@@ -116,7 +116,7 @@ print("Profile 2:", profile2)
 profile3 = build_profile("Gianluca", "Brussani", location="Italy")
 print("Profile 3:", profile3)
 
-
+print("\n")
 
 
 
@@ -134,21 +134,64 @@ print("Profile 3:", profile3)
 def plan_event(event_name: str, list_of_participants: list, hour: float) ->dict:
     event: dict ={
         "Name" : event_name,
-        "List of participants" : list_of_participants
+        "List of participants" : list_of_participants,
+        "Hour": hour
     }
     return event
 def modify_event(dictionary: dict, event_name: str, list_of_participants: list, hour: float):
-    for dict in dictionary:
+    if event_name in dictionary:
+        dictionary[event_name] = {
+            "Name": event_name,
+            "List of participants": list_of_participants,
+            "Hour": hour
+        }
+        return dictionary
+    else:
+        print("Event not found in dictionary.")
+        return dictionary
         
 
+dict_plan_event1 = plan_event("Road to environment", ["Leo", "Matteo", "Bruno"], "5pm")
+dict_plan_event2 = plan_event("Test your competencies", ["Giulia", "Francesco", "Stefano"], "7pm")
 
+print(dict_plan_event1)
+print(dict_plan_event2)
 
+print("\n")
 #5. Shopping List:
 
-#Write a function called create_shopping_list() that accepts a store name and any number of items as arguments. It should return a dictionary with the store name and a set of items to buy there. Test the function with different stores and item lists.
+#Write a function called create_shopping_list() that accepts a store name and any number of items as arguments. It should return a dictionary with the store 
+#name and a set of items to buy there. Test the function with different stores and item lists.
 
 #Example: create_shopping_list("Grocery Store", {"Milk", "Eggs", "Bread"})
 
 #Write a function called print_shopping_list() that accepts a dictionary and a store name, then prints each item from that store's shopping list.
 
 #Example: print_shopping_list(dictionary, "Grocery Store")
+def create_shopping_list(store_name: str, *items: list) ->dict:
+    shoppng_dict = {
+        "Store_name" : store_name,
+        "Product" : set(items)
+    }
+    return shoppng_dict
+
+def print_shopping_list(dictionary: dict, store_name: str) ->None:
+    if store_name in dictionary:
+        print(f"This shopping list is for {store_name}:")
+        for item in dictionary[store_name]["Product"]:
+            print(item)
+    else:
+        print("Store not found.")
+
+shopping_list1 = create_shopping_list("Conad", "Milk", "Eggs", "Bread")
+shopping_list2 = create_shopping_list("Mediaword", "Computer", "Charger", "Headphones")
+
+shopping_lists = {
+    shopping_list1["Store_name"]: shopping_list1,
+    shopping_list2["Store_name"]: shopping_list2
+}
+
+print_shopping_list(shopping_lists, "Conad")
+print()
+print_shopping_list(shopping_lists, "Mediaword")
+
