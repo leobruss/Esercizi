@@ -67,17 +67,16 @@ print("\n")
 #Output: bag,hello,without,world
 def comma_separated(string: str) ->str:
     string1 = string.split(",")
-    for s in string1:
-        sorted_string = sorted(s.strip())
-        
-    sort_string = ",".join(sorted_string)
-   
-    print(sort_string)
+    x = sorted(string1)
+    y = ""
+    for i in x:
+        y += i + ","
+    y = y[:-1]
+    return y
 
+print(comma_separated("bag,hello,without,world"))
 
-
-comma_separated("bag,hello,without,world")
-
+print("\n")
 
 #Write a function that accepts a list of sentences (string) as input and returns each line as output after capitalising all sentence characters. For example:
 #Input: Practice makes perfect
