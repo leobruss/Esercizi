@@ -25,7 +25,7 @@ class Magazzino:
     def verifica_disponibilità(self, nome: str) -> str: 
         for prodotto in self.magazzino:
             if prodotto.nome == nome:
-                return f"Il prodotto {self.prodotto.nome} è disponibile in magazzino"
+                return f"Il prodotto {prodotto.nome} è disponibile in magazzino"
         return f"Il prodotto {self.prodotto.nome} non è disponibile in magazzino"
             
 prodotto1: Prodotto = Prodotto("Pizza", 2)
