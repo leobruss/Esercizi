@@ -5,7 +5,7 @@ class Prodotto:
 
 class Magazzino:
     def __init__(self) -> None:
-        self.magazzino: list[Prodotto] = []
+        self.magazzino = []
 
     def aggiungi_prodotto(self, prodotto: Prodotto) -> None:
         self.prodotto = prodotto
@@ -26,7 +26,7 @@ class Magazzino:
         for prodotto in self.magazzino:
             if prodotto.nome == nome:
                 return f"Il prodotto {prodotto.nome} è disponibile in magazzino"
-        return f"Il prodotto {self.prodotto.nome} non è disponibile in magazzino"
+        return f"Il prodotto {prodotto.nome} non è disponibile in magazzino"
             
 prodotto1: Prodotto = Prodotto("Pizza", 2)
 prodotto2: Prodotto = Prodotto("Pasta", 5)
