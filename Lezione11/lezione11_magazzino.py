@@ -5,7 +5,7 @@ class Prodotto:
 
 class Magazzino:
     def __init__(self) -> None:
-        self.magazzino = []
+        self.magazzino: list[Prodotto] = []
 
     def aggiungi_prodotto(self, prodotto: Prodotto) -> None:
         self.prodotto = prodotto

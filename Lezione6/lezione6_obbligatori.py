@@ -186,7 +186,7 @@ class Admin(User):
 user1 = Admin("Leonardo", "Brussani", 19, "Male", 3278242560, 1, ["can add post", "can delete post", "can ban user"])
 user1.show_privileges()
 
-
+print("\n")
 #9-8. Privileges: Write a separate Privileges class. The class should have one attribute, privileges, that stores a list of strings as described 
 #in Exercise 9-7. Move the show_privileges() method to this class. Make a Privileges instance as an attribute in the Admin class. 
 #Create a new instance of Admin and use your method to show its privileges.
@@ -206,6 +206,7 @@ class Privileges:
 user1 = Admin("Leonardo", "Brussani", 19, "Male", 3278242560, 1, ["can add post", "can delete post", "can ban user"])
 Privileges.show_privileges(user1)
 
+print("\n")
 #9-9. Battery Upgrade: Use the final version of electric_car.py from this section. Add a method to the Battery class called upgrade_battery(). 
 #This method should check the battery size and set the capacity to 65 if it isn’t already. Make an electric car with a default battery size, 
 #call get_range() once, and then call get_range() a second time after upgrading the battery. You should see an increase in the car’s range.
@@ -218,12 +219,25 @@ Privileges.show_privileges(user1)
 #9-11. Imported Admin: Start with your work from Exercise 9-8. Store the classes User, Privileges, and Admin in one module. 
 #Create a separate file, make an Admin instance, and call show_privileges() to show that everything is working correctly.
 
+#Done
+
 #9-12. Multiple Modules: Store the User class in one module, and store the Privileges and Admin classes in a separate module. In a separate file, 
 #create an Admin instance and call show_privileges() to show that everything is still working correctly.
 
 #9-13. Dice: Make a class Die with one attribute called sides, which has a default value of 6. Write a method called roll_die() that prints a 
 #random number between 1 and the number of sides the die has. Make a 6-sided die and roll it 10 times. Make a 10-sided die and a 20-sided die. 
 #Roll each die 10 times.
+from random import randint
+class Die:
+    def __init__(self, sides: int = 6) -> None:
+        self.sides = sides
+
+    def roll_die(self ) -> None:
+        x = randint(1, self.sides)
+        while True:
+            
+
+
 
 #9-14. Lottery: Make a list or tuple containing a series of 10 numbers and 5 letters. Randomly select 4 numbers or letters from the list and print 
 #a message saying that any ticket matching these 4 numbers or letters wins a prize.
