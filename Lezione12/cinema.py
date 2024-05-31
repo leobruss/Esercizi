@@ -26,7 +26,7 @@ class MovieCatalog():
             if isinstance(valore, list):
                 print(chiave + ":")
                 for elemento in valore:
-                    print("- " + str(elemento))
+                    print("- " + str(elemento)).
 
 
     def list_directors(self) ->None:
