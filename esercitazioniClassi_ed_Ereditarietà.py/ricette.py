@@ -30,10 +30,11 @@ class RecipeManager:
         else:
             return "La ricetta non  esiste"
     def update_ingredient(self, recipe_name: str, old_ingredient: str, new_ingredient: str) ->dict:
-        if recipe_name in self.ricettario[recipe_name]:
-            if old_ingredient in self.ricettario:
-                self.ricettario[recipe_name].remove(old_ingredient)
-                self.ricettario[recipe_name].append(new_ingredient)
+        if recipe_name in self.ricettario:
+            ingredients = self.ricettario[recipe_name]
+            if old_ingredient in ingredients:
+                ingredients = [new_ingredient if ingredient == old_ingredient else ingredient for ingredient in ingredients]
+                self.ricettario[recipe_name] = ingredients
                 return {recipe_name: self.ricettario[recipe_name]}
             else:
                 return "L'ingrediente non esiste"
@@ -70,6 +71,7 @@ print(manager.list_recipes()) # ['Torta di mele']
 print(manager.list_ingredients("Torta di mele"))
 print(manager.search_recipe_by_ingredient("Uova"))
 
+print("\n")
 	
 manager = RecipeManager()
 print(manager.create_recipe("Pizza Margherita", ["Farina", "Acqua", "Lievito", "Pomodoro", "Mozzarella"]))
@@ -78,7 +80,8 @@ print(manager.update_ingredient("Pizza Margherita", "Mozzarella", "Mozzarella di
 print(manager.remove_ingredient("Pizza Margherita", "Acqua"))
 print(manager.list_ingredients("Pizza Margherita"))
 
-	
+print("\n")
+
 manager = RecipeManager()
 print(manager.create_recipe("Spaghetti alla Carbonara", ["Spaghetti", "Uova", "Guanciale", "Pecorino Romano", "Pepe"]))
 print(manager.search_recipe_by_ingredient("Uova"))

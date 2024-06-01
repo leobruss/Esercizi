@@ -51,6 +51,8 @@ print(f"Il perimetro del rettangolo è: {circle.perimeter()}")
 print("\n")
 print("*","-"*100,"*")
 print("\n")
+
+
 #Exercise 2: Implementing Static Methods
 from abc import ABC
 class MathOperations (ABC):
@@ -69,3 +71,7 @@ class MathOperations (ABC):
 print(f"Somma: {MathOperations.add(4, 6)}")
 print()
 print(f"Moltiplicazione: {MathOperations.multiply(4, 6)}")
+
+print("\n")
+print("*","-"*100,"*")
+print("\n")
