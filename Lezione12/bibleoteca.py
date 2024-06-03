@@ -56,4 +56,5 @@ print()
 print(biblioteca.restituisci_libro(libro1.titolo))
 print()
 print("La lista dei titoli disponibili:")
-print("\t",biblioteca.mostra_libri_disponibili())
+print("\t",
+      biblioteca.mostra_libri_disponibili())
