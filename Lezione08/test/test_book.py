@@ -1,5 +1,5 @@
 import unittest
-from library_managment_system import Library, Book
+from Esercizi.Lezione08.esercizi.library_managment_system import Library, Book
 
 
 class TestBook(unittest.TestCase):

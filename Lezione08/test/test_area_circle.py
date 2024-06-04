@@ -1,5 +1,5 @@
 import unittest
-from shape import Circle
+from Esercizi.Lezione08.esercizi.shape import Circle
 
 class TestCircle(unittest.TestCase):
     def test_area(self):
