@@ -1,5 +1,5 @@
 import unittest
-from lezione8 import MathOperations
+from mathoperations import MathOperations
 
 class TestMathOperations(unittest.TestCase):
     def test_sum(self):

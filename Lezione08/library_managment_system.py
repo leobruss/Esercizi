@@ -75,42 +75,42 @@ class Library:
     
     @classmethod
     def library_statistics(cls):
-        return f"Total number of books: {cls.total_books}"
+        return cls.total_books
 
 
+if __name__ == '__main__':
+    library1 = Library()
+    book1_info = "The Great Gatsby, F. Scott Fitzgerald, 9780743273565"
+    book2_info = "La Divina Commedia, D. Alighieri, 999000666"
 
-library1 = Library()
-book1_info = "The Great Gatsby, F. Scott Fitzgerald, 9780743273565"
-book2_info = "La Divina Commedia, D. Alighieri, 999000666"
+    book1 = Book.from_string(book1_info)
+    book2 = Book.from_string(book2_info)
 
-book1 = Book.from_string(book1_info)
-book2 = Book.from_string(book2_info)
-
-library1.add_book(book1)
-library1.add_book(book2)
+    library1.add_book(book1)
+    library1.add_book(book2)
 
 
-member1_info = ("Leonardo, 240704")
-member2_info = ("Matteo, 241629")
+    member1_info = ("Leonardo, 240704")
+    member2_info = ("Matteo, 241629")
 
-member1 = Member.from_string(member1_info)
-member2 = Member.from_string(member2_info)
+    member1 = Member.from_string(member1_info)
+    member2 = Member.from_string(member2_info)
 
-library1.register_member(member1)
-library1.register_member(member2)
+    library1.register_member(member1)
+    library1.register_member(member2)
 
-tot_books = Library.library_statistics()
+    tot_books = Library.library_statistics()
 
-print()
-print(book1)
-print()
-print(book2)
-print("\n")
-print(member1)
-print()
-print(member2)
-print()
-print(library1)
-print()
-print(tot_books)
+    print()
+    print(book1)
+    print()
+    print(book2)
+    print("\n")
+    print(member1)
+    print()
+    print(member2)
+    print()
+    print(library1)
+    print()
+    print(tot_books)
 
