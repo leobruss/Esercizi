@@ -124,7 +124,7 @@ class Person:
         month: dict = {
             "01" : "A",  
             "02" : "B",
-            "03" : "B",
+            "03" : "C",
             "04" : "D",
             "05" : "E",
             "06" : "H",
@@ -282,7 +282,7 @@ class Person:
         
                 
        
-person_1 : Person = Person(name="Leonardo", surname="Brussani", birth_date="24/07/2004", birth_place="Roma", gender="M")
+person_1 : Person = Person(name="Marika", surname="Dodi", birth_date="15/03/2004", birth_place="Roma", gender="F")
 
 
 print("Name: ", person_1.get__name())
