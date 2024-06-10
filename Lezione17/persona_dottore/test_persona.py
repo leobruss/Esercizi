@@ -1,8 +1,8 @@
 import unittest
-from persona import Persona
-from dottore import Dottore
-from paziente import Paziente
-from fatture import Fattura
+from Esercizi.Lezione17.persona_dottore.persona import Persona
+from Esercizi.Lezione17.persona_dottore.dottore import Dottore
+from Esercizi.Lezione17.persona_dottore.paziente import Paziente
+from Esercizi.Lezione17.persona_dottore.fatture import Fattura
 
 class TestPersona(unittest.TestCase):
     def setUp(self) -> None:

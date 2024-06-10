@@ -1,4 +1,4 @@
-from persona import Persona
+from Esercizi.Lezione17.persona_dottore.persona import Persona
 class Dottore(Persona):
     def __init__(self, _first_name: str, _last_name: str, _specialization: str, _parcel:float) -> None:
         super().__init__(_first_name, _last_name)

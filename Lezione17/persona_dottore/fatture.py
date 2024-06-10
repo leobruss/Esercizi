@@ -1,5 +1,5 @@
-from dottore import Dottore
-from paziente import Paziente
+from Esercizi.Lezione17.persona_dottore.dottore import Dottore
+from Esercizi.Lezione17.persona_dottore.paziente import Paziente
 class Fattura:
     def __init__(self, _patient: list[Paziente], _doctor: Dottore) -> None:
         self._patient = _patient
