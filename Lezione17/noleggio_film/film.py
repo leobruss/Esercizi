@@ -1,17 +1,20 @@
+# film.py
 class Film:
-    def __init__(self, _id: int, _title: str) -> None:
-        self._id = _id
-        self._title = _title
+    def __init__(self, id, title):
+        self.__id = id
+        self.__title = title
 
-    def setID(self, id: int) ->None:
-        self._id = id
+    def setID(self, id):
+        self.__id = id
 
-    def setTitle(self, _title: str) ->None:
-        self._title = _title
+    def setTitle(self, title):
+        self.__title = title
 
-    def getID(self) ->int:
-        return self.setID()
-    
-    def getTitle(self) ->str:
-        return self.setTitle()
-    
+    def getID(self):
+        return self.__id
+
+    def getTitle(self):
+        return self.__title
+
+    def isEqual(self, otherFilm):
+        return self.__id == otherFilm.getID()

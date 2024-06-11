@@ -1,53 +1,47 @@
+# movie_genre.py
 from film import Film
+
 class Azione(Film):
-    def __init__(self, _id: int, _title: str, _genere: str, _penale: float) -> None:
-        super().__init__(_id, _title)
-        self._genere = _genere
-        self._penale = _penale
+    def __init__(self, id, title):
+        super().__init__(id, title)
+        self.__genere = "Azione"
+        self.__penale = 3.0
 
-    def getGenere(self) ->str:
-        return self._genere
-    
-    def getPenale(self) ->float:
-        return self._penale
-    
-    def calcolaPenaleRitardo(self, giorni: int) ->float:
-        self.giorni = giorni
-        tot_pagare = self.giorni * 3
-        return tot_pagare
-    
+    def getGenere(self):
+        return self.__genere
+
+    def getPenale(self):
+        return self.__penale
+
+    def calcolaPenaleRitardo(self, giorni_ritardo):
+        return giorni_ritardo * self.__penale
+
 class Commedia(Film):
-    def __init__(self, _id: int, _title: str, _genere: str, _penale: float) -> None:
-        super().__init__(_id, _title)
-        self._genere = _genere
-        self._penale = _penale
+    def __init__(self, id, title):
+        super().__init__(id, title)
+        self.__genere = "Commedia"
+        self.__penale = 2.5
 
-    def getGenere(self) ->str:
-        return self._genere
-    
-    def getPenale(self) ->float:
-        return self._penale
-    
-    def calcolaPenaleRitardo(self, giorni: int) ->float:
-        self.giorni = giorni
-        tot_pagare = self.giorni * 2.50
-        return tot_pagare
-    
-class Drama(Film):
-    def __init__(self, _id: int, _title: str, _genere: str, _penale: float) -> None:
-        super().__init__(_id, _title)
-        self._genere = _genere
-        self._penale = _penale
+    def getGenere(self):
+        return self.__genere
 
-    def getGenere(self) ->str:
-        return self._genere
-    
-    def getPenale(self) ->float:
-        return self._penale
-    
-    def calcolaPenaleRitardo(self, giorni: int) ->float:
-        self.giorni = giorni
-        tot_pagare = self.giorni * 2
-        return tot_pagare
-    
-    
+    def getPenale(self):
+        return self.__penale
+
+    def calcolaPenaleRitardo(self, giorni_ritardo):
+        return giorni_ritardo * self.__penale
+
+class Dramma(Film):
+    def __init__(self, id, title):
+        super().__init__(id, title)
+        self.__genere = "Dramma"
+        self.__penale = 2.0
+
+    def getGenere(self):
+        return self.__genere
+
+    def getPenale(self):
+        return self.__penale
+
+    def calcolaPenaleRitardo(self, giorni_ritardo):
+        return giorni_ritardo * self.__penale
