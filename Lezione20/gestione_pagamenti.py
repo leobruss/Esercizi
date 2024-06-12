@@ -56,6 +56,8 @@ class PagamentoCartaDiCredito(Pagamento):
         self.data_scadenza = data_scadenza
         self.numero_di_carta = numero_di_carta
 
+
+
     def dettagliPagamento(self) -> str:
         print(f"Pagamento di: €{self.get_pagamento()} effettuato con la carta di credito\nNome sulla carta: {self.nome}\nData di scadenza: {self.data_scadenza}\nNumero della carta: {self.numero_di_carta}")
     
