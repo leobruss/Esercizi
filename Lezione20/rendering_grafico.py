@@ -29,6 +29,29 @@ class Quadrato(Forma):
                 print(f"{lato_lungo}\n{linee_spazi_vuoti}{lato_lungo}")
 
 
+class Rettangolo(Forma):
+        def __init__(self, nome: str, base: int, altezza: int) -> None:
+                self.nome = nome    
+                self.altezza = altezza 
+                self.base = base
+                print(f"Il valore dei lati del {nome} sono pari a:\nBase: {base}\nAltezza: {altezza}")
+
+        def getArea(self) -> None:
+                self.area_rettangolo = self.altezza * self.base 
+                print(F"L'area del {self.nome} è pari a {self.area_rettangolo}")
+
+        def render(self) -> None:
+                lato_lungo: str = "* " * self.base
+                spazio_vuoto: str = "* " + "  " * (self.base - 2) + "*\n"
+                linee_spazi_vuoti: str = spazio_vuoto * (self.altezza - 2) 
+                
+                print(f"{lato_lungo}\n{linee_spazi_vuoti}{lato_lungo}")
+
+
+
+
+
+
 class Triangolo (Forma):
         def __init__(self, nome: str, lunghezza_base: int, lunghezza_altezza: int) -> None:
             super().__init__(nome)               
@@ -39,12 +62,14 @@ class Triangolo (Forma):
             self.area_triangolo = (self.lunghezza_base * self.lunghezza_altezza) / 2
             
         def render(self) -> None:
-            base: str = "*" * self.lunghezza_base 
-            altezza: str = "*" * self.lunghezza_altezza
-            for a in altezza:
-                for b in base:
-                    spazio_vuoto: str = " "
-                    
+                for a in range(self.lunghezza_altezza):
+                        for b in range(self.lunghezza_base):
+                                if a == self.lunghezza_altezza -1 or a == b or b== 0:
+                                       print("*", end="")
+                                else:
+                                       print(" ", end="")
+
+                        print()
                   
 
 
@@ -53,4 +78,16 @@ class Triangolo (Forma):
 quadrato1: Quadrato = Quadrato("quadrato", 4)
 quadrato1.getArea()
 quadrato1.render()
+
+print("\n")
+
+rettangolo1: Rettangolo = Rettangolo("rettangolo", 8, 4)
+rettangolo1.getArea()
+rettangolo1.render()
+
+print("\n")
+
+triangolo1: Triangolo = Triangolo("triangolo", 10, 10)
+triangolo1.getArea()
+triangolo1.render()
 
