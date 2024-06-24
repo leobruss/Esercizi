@@ -1,3 +1,4 @@
+
 #Password Validation: 
 #Write a function validate_password(password) that checks if a password meets certain criteria
 #(i.e., minimum length of 20 characters, at least three uppercase characters, and at least four special characters).  
@@ -21,7 +22,7 @@ def validate_password(password) ->str:
     if variable1 < 4:
         raise SpecialPassworsd("Numero di caratteri speciali non esaustivo")
 
-    
+
 class ShortPassworsd(Exception):
     def __init__(self, *args: object) -> None:
         super().__init__(*args)
