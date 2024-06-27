@@ -1,0 +1,61 @@
+class Queue:
+    def __init__(self) -> None:
+        self.stack = []
+
+    def push(self, x: int):
+        self.stack.append(x)
+
+    def top(self):
+        return self.stack[0]
+
+    def pop(self):
+        return self.stack.pop(0)
+    
+    def empty(self):
+        if len(self.stack) == 0:
+            return True
+        return False
+
+
+
+    
+class MyStack:
+
+    def __init__(self) -> None:
+        self.queue = Queue()
+        self.temp = Queue()
+        
+    def push(self, x: int):
+        self.queue.push(x)
+
+    def top(self):
+        while not self.queue.empty():
+            x = self.queue.pop()
+            self.temp.push(x)
+        while not self.temp.empty():
+            y = self.temp.pop()
+            self.queue.push(y)
+        return x
+    
+    def pop(self):
+        while not self.queue.empty():
+            x = self.queue.pop()
+            if not self.queue.empty():
+                self.temp.push(x)
+        while not self.temp.empty():
+            y = self.temp.pop()
+            self.queue.push(y)
+        return x
+    def empty(self):
+        return self.queue.empty()
+
+
+	
+mystack = MyStack()
+mystack.push(1)
+mystack.push(2)
+print(mystack.top())    # Output: 2
+print(mystack.pop())    # Output: 2
+print(mystack.empty())  # Output: False
+print(mystack.pop())    # Output: 1
+print(mystack.empty())  # Output: True
