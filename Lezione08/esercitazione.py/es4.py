@@ -4,7 +4,7 @@ def is_valid_parenthesis(s: str) -> bool:
     parentesi = {')': '(', 
                  '}': '{', 
                  ']': '['
-    }
+        }
     
     for char in s:
         if char in parentesi:
